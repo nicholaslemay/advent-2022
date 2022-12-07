@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using FluentAssertions;
@@ -22,14 +23,15 @@ public class Part1Test
     [Fact]
     public void DoTheDew()
     {
-        ElvesCaloryCounts.ReadFromFile();
+        Assert.Empty(ElvesCaloryCounts.ReadFromFile());
     }
 }
 
 public class ElvesCaloryCounts
 {
-    public static void ReadFromFile()
+    public static IEnumerable<int> ReadFromFile()
     {
+        return new List<int>();
     }
 }
 

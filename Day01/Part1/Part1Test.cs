@@ -10,7 +10,11 @@ public class Part1Test
     [Fact]
     public void ElvesKnowHighestCaloryCount()
     {
-        Elves.HighestCaloryCount(new List<List<int>>{new (){1},new(){3},new(){2}}).Should().Be(3);
+        var elvesCaloriesByItems = new List<List<int>>{
+            new (){1,1,1},
+            new(){3,3,3},
+            new(){2,2,2}};
+        Elves.HighestCaloryCount(elvesCaloriesByItems).Should().Be(9);
     }
 }
 
@@ -18,6 +22,6 @@ public class Elves
 {
     public static int HighestCaloryCount(List<List<int>> calories)
     {
-        return calories.Select(x=>x.First()).Max();
+        return calories.Select(x=>x.Sum()).Max();
     }
 }

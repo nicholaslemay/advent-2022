@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
@@ -34,7 +35,8 @@ public class ElvesCaloryCounts
 {
     public static IEnumerable<int> ReadFromFile()
     {
-        return File.ReadLines("sampleInput.txt").Select(int.Parse);
+        return File.ReadAllText("sampleInput.txt").Split(new string[] { Environment.NewLine },
+            StringSplitOptions.RemoveEmptyEntries).Select(int.Parse);
     }
 }
 

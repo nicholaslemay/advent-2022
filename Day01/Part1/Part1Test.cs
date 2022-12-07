@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using FluentAssertions;
 using Xunit;
@@ -23,15 +24,15 @@ public class Part1Test
     [Fact]
     public void DoTheDew()
     {
-        Assert.Empty(ElvesCaloryCounts.ReadFromFile());
+        ElvesCaloryCounts.ReadFromFile().First().Should().Be("123");
     }
 }
 
 public class ElvesCaloryCounts
 {
-    public static IEnumerable<int> ReadFromFile()
+    public static IEnumerable<string> ReadFromFile()
     {
-        return new List<int>();
+        return File.ReadLines("sampleInput.txt");
     }
 }
 

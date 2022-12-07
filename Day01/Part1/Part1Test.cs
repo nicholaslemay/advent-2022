@@ -32,9 +32,8 @@ public class Part1Test
     [Fact]
     public void CanSolveSampleFromDay1()
     {
-        var calories = ElvesCaloryCounts.ReadFromFile("day1Sample.txt");
-        calories.Should().HaveCount(5);
-        calories.First().First().Should().Be(1000);
+        var inputs = ElvesCaloryCounts.ReadFromFile("day1Sample.txt");
+        Elves.HighestCaloryCount(inputs).Should().Be(24000);
     }
 }
 

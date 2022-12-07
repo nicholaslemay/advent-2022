@@ -24,15 +24,15 @@ public class Part1Test
     [Fact]
     public void ReadsCaloriesFromSpecifiedInput()
     {
-        ElvesCaloryCounts.ReadFromFile().First().Should().Be("123");
+        ElvesCaloryCounts.ReadFromFile().First().Should().Be(123);
     }
 }
 
 public class ElvesCaloryCounts
 {
-    public static IEnumerable<string> ReadFromFile()
+    public static IEnumerable<int> ReadFromFile()
     {
-        return File.ReadLines("sampleInput.txt");
+        return File.ReadLines("sampleInput.txt").Select(int.Parse);
     }
 }
 

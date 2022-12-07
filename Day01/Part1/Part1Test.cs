@@ -40,17 +40,17 @@ public class Part1Test
 
 public class ElvesCaloryCounts
 {
-    public static IEnumerable<IEnumerable<int>> ReadFromFile(string fileName)
+    public static IEnumerable<List<int>> ReadFromFile(string fileName)
     {
         return File.ReadAllText(fileName)
             .Split(new string[] { "\n\n" }, StringSplitOptions.None)
-            .Select(x => x.Split("\n").Select(int.Parse));
+            .Select(x => x.Split("\n").Select(int.Parse).ToList());
     }
 }
 
 public class Elves
 {
-    public static int HighestCaloryCount(List<List<int>> elvesCaloriesByItems)
+    public static int HighestCaloryCount(IEnumerable<List<int>> elvesCaloriesByItems)
     {
         return elvesCaloriesByItems
             .Select(elveItemsCalories => elveItemsCalories.Sum())

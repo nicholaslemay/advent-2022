@@ -24,7 +24,9 @@ public class Part1Test
     [Fact]
     public void ReadsCaloriesFromSpecifiedInput()
     {
-        ElvesCaloryCounts.ReadFromFile().First().Should().Be(123);
+        var calories = ElvesCaloryCounts.ReadFromFile();
+        calories.Should().HaveCount(3);
+        calories.First().Should().Be(123);
     }
 }
 

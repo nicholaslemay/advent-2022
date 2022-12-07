@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using System.Linq;
 using FluentAssertions;
 using Xunit;
 
@@ -8,14 +10,14 @@ public class Part1Test
     [Fact]
     public void ElvesKnowHighestCaloryCount()
     {
-        Elves.HighestCaloryCount(123).Should().Be(123);
+        Elves.HighestCaloryCount(new List<int>{123}).Should().Be(123);
     }
 }
 
 public class Elves
 {
-    public static int HighestCaloryCount(int calories)
+    public static int HighestCaloryCount(List<int> calories)
     {
-        return calories;
+        return calories.First();
     }
 }

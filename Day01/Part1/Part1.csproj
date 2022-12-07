@@ -30,6 +30,9 @@
       <None Update="day1Sample.txt">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </None>
+      <None Update="myPuzzleInput.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
     </ItemGroup>
 
 </Project>

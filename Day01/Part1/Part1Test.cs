@@ -35,6 +35,13 @@ public class Part1Test
         var inputs = ElvesCaloryCounts.ReadFromFile("day1Sample.txt");
         Elves.HighestCaloryCount(inputs).Should().Be(24000);
     }
+    
+    [Fact]
+    public void CanSolveMyPuzzleInputFromDay1()
+    {
+        var inputs = ElvesCaloryCounts.ReadFromFile("myPuzzleInput.txt");
+        Elves.HighestCaloryCount(inputs).Should().Be(74711);
+    }
 }
 
 public class ElvesCaloryCounts

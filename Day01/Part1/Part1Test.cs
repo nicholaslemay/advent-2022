@@ -18,6 +18,19 @@ public class Part1Test
         };
         Elves.HighestCaloryCount(elvesCaloriesByItems).Should().Be(9);
     }
+
+    [Fact]
+    public void DoTheDew()
+    {
+        ElvesCaloryCounts.ReadFromFile();
+    }
+}
+
+public class ElvesCaloryCounts
+{
+    public static void ReadFromFile()
+    {
+    }
 }
 
 public class Elves

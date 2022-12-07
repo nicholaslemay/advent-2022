@@ -27,16 +27,17 @@ public class Part1Test
     {
         var calories = ElvesCaloryCounts.ReadFromFile();
         calories.Should().HaveCount(3);
-        calories.First().Should().Be(123);
+        calories.First().First().Should().Be(123);
     }
 }
 
 public class ElvesCaloryCounts
 {
-    public static IEnumerable<int> ReadFromFile()
+    public static IEnumerable<IEnumerable<int>> ReadFromFile()
     {
-        return File.ReadAllText("sampleInput.txt").Split(new string[] { Environment.NewLine },
-            StringSplitOptions.RemoveEmptyEntries).Select(int.Parse);
+        return File.ReadAllText("sampleInput.txt")
+            .Split(new string[] { "\n\n" }, StringSplitOptions.None)
+            .Select(x => x.Split("\n").Select(int.Parse));
     }
 }
 

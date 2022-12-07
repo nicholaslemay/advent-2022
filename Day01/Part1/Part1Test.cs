@@ -20,8 +20,10 @@ public class Part1Test
 
 public class Elves
 {
-    public static int HighestCaloryCount(List<List<int>> calories)
+    public static int HighestCaloryCount(List<List<int>> elvesCaloriesByItems)
     {
-        return calories.Select(x=>x.Sum()).Max();
+        return elvesCaloriesByItems.
+            Select(elveItemsCalories=>elveItemsCalories.Sum())
+            .Max();
     }
 }

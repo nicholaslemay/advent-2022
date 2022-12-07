@@ -8,14 +8,14 @@ public class Part1Test
     [Fact]
     public void ElvesKnowHighestCaloryCount()
     {
-        Elves.HighestCaloryCount().Should().Be(1);
+        Elves.HighestCaloryCount(123).Should().Be(123);
     }
 }
 
 public class Elves
 {
-    public static int HighestCaloryCount()
+    public static int HighestCaloryCount(int calories)
     {
-        return 1;
+        return calories;
     }
 }

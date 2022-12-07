@@ -6,7 +6,7 @@ namespace Day01Part1;
 public class Part1Test
 {
     [Fact]
-    public void Test1()
+    public void ElvesKnowHighestCaloryCount()
     {
         Elves.HighestCaloryCount().Should().Be(1);
     }

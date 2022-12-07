@@ -22,7 +22,7 @@ public class Part1Test
     }
 
     [Fact]
-    public void DoTheDew()
+    public void ReadsCaloriesFromSpecifiedInput()
     {
         ElvesCaloryCounts.ReadFromFile().First().Should().Be("123");
     }

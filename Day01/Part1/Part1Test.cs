@@ -1,5 +1,4 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -25,7 +24,7 @@ public class Part1Test
     [Fact]
     public void ReadsCaloriesFromSpecifiedInput()
     {
-        var calories = ElvesCaloryCounts.ReadFromFile();
+        var calories = ElvesCaloryCounts.ReadFromFile("sampleInput.txt");
         calories.Should().HaveCount(3);
         calories.First().First().Should().Be(123);
     }
@@ -33,9 +32,9 @@ public class Part1Test
 
 public class ElvesCaloryCounts
 {
-    public static IEnumerable<IEnumerable<int>> ReadFromFile()
+    public static IEnumerable<IEnumerable<int>> ReadFromFile(string fileName)
     {
-        return File.ReadAllText("sampleInput.txt")
+        return File.ReadAllText(fileName)
             .Split(new string[] { "\n\n" }, StringSplitOptions.None)
             .Select(x => x.Split("\n").Select(int.Parse));
     }

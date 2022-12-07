@@ -28,6 +28,14 @@ public class Part1Test
         calories.Should().HaveCount(3);
         calories.First().First().Should().Be(123);
     }
+    
+    [Fact]
+    public void CanSolveSampleFromDay1()
+    {
+        var calories = ElvesCaloryCounts.ReadFromFile("day1Sample.txt");
+        calories.Should().HaveCount(5);
+        calories.First().First().Should().Be(1000);
+    }
 }
 
 public class ElvesCaloryCounts

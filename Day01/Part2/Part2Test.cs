@@ -10,6 +10,14 @@ namespace Day01Part2;
 public class Part2Test
 {
     [Fact]
+    public void ReadsCaloriesFromSpecifiedInput()
+    {
+        var calories = ElvesCaloryCounts.ReadFromFile("sampleInput.txt");
+        calories.Should().HaveCount(3);
+        calories.First().First().Should().Be(123);
+    }
+    
+    [Fact]
     public void ElvesKnowHighestCaloryCount()
     {
         var elvesCaloriesByItems = new List<List<int>>
@@ -21,27 +29,6 @@ public class Part2Test
         Elves.HighestCaloryCount(elvesCaloriesByItems).Should().Be(9);
     }
 
-    [Fact]
-    public void ReadsCaloriesFromSpecifiedInput()
-    {
-        var calories = ElvesCaloryCounts.ReadFromFile("sampleInput.txt");
-        calories.Should().HaveCount(3);
-        calories.First().First().Should().Be(123);
-    }
-    
-    [Fact]
-    public void CanSolveSampleFromDay1()
-    {
-        var inputs = ElvesCaloryCounts.ReadFromFile("day1Sample.txt");
-        Elves.HighestCaloryCount(inputs).Should().Be(24000);
-    }
-    
-    [Fact]
-    public void CanSolveMyPuzzleInputFromDay1()
-    {
-        var inputs = ElvesCaloryCounts.ReadFromFile("myPuzzleInput.txt");
-        Elves.HighestCaloryCount(inputs).Should().Be(74711);
-    }
 }
 
 public class ElvesCaloryCounts

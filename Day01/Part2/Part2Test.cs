@@ -31,6 +31,13 @@ public class Part2Test
         
         Elves.CaloryCountOftopElves(elvesCaloriesByItems).Should().Be(15 + 12 +9);
     }
+    
+    [Fact]
+    public void CanSolveSampleFromDay1()
+    {
+        var inputs = ElvesCaloryCounts.ReadFromFile("day1Sample.txt");
+        Elves.CaloryCountOftopElves(inputs).Should().Be(45000);
+    }
 
 }
 

@@ -38,6 +38,13 @@ public class Part2Test
         var inputs = ElvesCaloryCounts.ReadFromFile("day1Sample.txt");
         Elves.CaloryCountOftopElves(inputs).Should().Be(45000);
     }
+    
+    [Fact]
+    public void CanSolveMyPuzzleInputFromDay1()
+    {
+        var inputs = ElvesCaloryCounts.ReadFromFile("myPuzzleInput.txt");
+        Elves.CaloryCountOftopElves(inputs).Should().Be(209481);
+    }
 
 }
 

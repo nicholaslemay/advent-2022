@@ -28,8 +28,8 @@ public class Part2Test
             new() { 4, 4, 4 },
             new() { 5,5,5},
         };
-        Elves.HighestCaloryCount(elvesCaloriesByItems).Should().BeEquivalentTo(new List<int>{15,12,9});
         
+        Elves.HighestCaloryCount(elvesCaloriesByItems).Should().Be(15 + 12 +9);
     }
 
 }
@@ -46,12 +46,12 @@ public class ElvesCaloryCounts
 
 public class Elves
 {
-    public static List<int> HighestCaloryCount(IEnumerable<List<int>> elvesCaloriesByItems)
+    public static int HighestCaloryCount(IEnumerable<List<int>> elvesCaloriesByItems)
     {
         return elvesCaloriesByItems
             .Select(elveItemsCalories => elveItemsCalories.Sum())
             .OrderByDescending(x=>x)
             .Take(3)
-            .ToList();
+            .Sum();
     }
 }

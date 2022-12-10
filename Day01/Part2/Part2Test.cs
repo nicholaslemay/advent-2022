@@ -18,7 +18,7 @@ public class Part2Test
     }
     
     [Fact]
-    public void ElvesKnowHighestCaloryCount()
+    public void ElvesKnowCalorycountPerElfCount()
     {
         var elvesCaloriesByItems = new List<List<int>>
         {
@@ -26,7 +26,7 @@ public class Part2Test
             new() { 3, 3, 3 },
             new() { 2, 2, 2 }
         };
-        Elves.HighestCaloryCount(elvesCaloriesByItems).Should().Be(9);
+        Elves.HighestCaloryCount(elvesCaloriesByItems).Should().HaveCount(3);
     }
 
 }
@@ -43,10 +43,9 @@ public class ElvesCaloryCounts
 
 public class Elves
 {
-    public static int HighestCaloryCount(IEnumerable<List<int>> elvesCaloriesByItems)
+    public static List<int> HighestCaloryCount(IEnumerable<List<int>> elvesCaloriesByItems)
     {
         return elvesCaloriesByItems
-            .Select(elveItemsCalories => elveItemsCalories.Sum())
-            .Max();
+            .Select(elveItemsCalories => elveItemsCalories.Sum()).ToList();
     }
 }

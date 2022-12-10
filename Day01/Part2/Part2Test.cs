@@ -28,7 +28,7 @@ public class Part2Test
             new() { 4, 4, 4 },
             new() { 5,5,5},
         };
-        Elves.HighestCaloryCount(elvesCaloriesByItems).Should().HaveCount(3);
+        Elves.HighestCaloryCount(elvesCaloriesByItems).Should().BeEquivalentTo(new List<int>{15,12,9});
         
     }
 
@@ -50,6 +50,7 @@ public class Elves
     {
         return elvesCaloriesByItems
             .Select(elveItemsCalories => elveItemsCalories.Sum())
+            .OrderByDescending(x=>x)
             .Take(3)
             .ToList();
     }

@@ -1,5 +1,5 @@
 class Elves
-  def self.with_most_calories(calories_per_elf)
+  def self.total_calories_per_elf(calories_per_elf)
     calories_per_elf.map(&:sum)
   end
 end
@@ -13,8 +13,8 @@ end
 end
 RSpec.describe "Elves" do
 
-  it 'know highest calories count carried per elf' do
-    expect(Elves.with_most_calories([[1,1,1],[2,2,2],[3,3,3]])).to eq([3,6,9])
+  it 'calories count carried per elf' do
+    expect(Elves.total_calories_per_elf([[1, 1, 1], [2, 2, 2], [3, 3, 3]])).to eq([3, 6, 9])
   end
 end
 

@@ -4,9 +4,9 @@ class Elves
   end
 end
 
-RSpec.describe "Day 10 part 02" do
+RSpec.describe "Elves" do
 
-  it 'works' do
+  it 'know highest calories count' do
     expect(Elves.with_most_calories).to eq(145)
   end
 end

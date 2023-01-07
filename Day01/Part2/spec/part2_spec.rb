@@ -1,6 +1,7 @@
 class Elves
   def self.calories_carried_by_top_elfs(calories_per_elf)
-    calories_per_elf.map(&:sum).sort.reverse.first(3).sum
+    total_cals_per_elf = calories_per_elf.map(&:sum)
+    total_cals_per_elf.sort.reverse.first(3).sum
   end
 end
 

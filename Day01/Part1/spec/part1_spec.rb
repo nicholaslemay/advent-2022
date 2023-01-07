@@ -6,8 +6,8 @@ end
 
 class CaloryCounts
 def self.from_file(filename)
-  File.readlines(filename).slice_when{|l| l=="\n"}.to_a
-      .map{|x| x.map(&:chomp)}.map{|x| x.map(&:to_i)}
+  calories_per_elf = File.readlines(filename).slice_when { |l| l == "\n" }.to_a
+  calories_per_elf.map{|x| x.map(&:to_i)}
 end
 
 end

@@ -1,6 +1,6 @@
 class Elves
-  def self.with_most_calories(calories)
-    calories.map(&:sum).max
+  def self.with_most_calories(calories_per_elf)
+    calories_per_elf.map(&:sum).max
   end
 end
 

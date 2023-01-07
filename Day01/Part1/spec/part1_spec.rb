@@ -6,7 +6,7 @@ end
 
 class CaloryCounts
 def self.from_file(filename)
-  File.readlines(filename).map(&:chomp)
+  File.readlines(filename).select{|l| l!="\n"}.map(&:chomp)
 end
 
 end
@@ -20,7 +20,7 @@ end
 RSpec.describe "Calory counts" do
 
   it 'From file' do
-    expect(CaloryCounts.from_file('./Part1/day1Sample.txt').count).to eq(14)
+    expect(CaloryCounts.from_file('./Part1/day1Sample.txt').count).to eq(10)
     expect(CaloryCounts.from_file('./Part1/day1Sample.txt')[0]).to eq('1000')
   end
 end

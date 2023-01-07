@@ -6,7 +6,7 @@ end
 
 RSpec.describe "Elves" do
 
-  it 'know highest calories count' do
+  it 'know highest calories count carried per elf' do
     expect(Elves.with_most_calories([[1,1,1],[2,2,2],[3,3,3]])).to eq(9)
   end
 end

@@ -1,6 +1,6 @@
 class Elves
-  def self.with_most_calories(calory)
-    calory.max
+  def self.with_most_calories(calories)
+    calories.max
   end
 end
 

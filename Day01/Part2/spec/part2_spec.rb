@@ -33,4 +33,8 @@ RSpec.describe "Day01" do
     expect(Elves.calories_carried_by_top_elfs(calory_count)).to eq(45000)
   end
 
+  it 'Can solve my input' do
+    calory_count = CaloryCounts.from_file('./Part2/myPuzzleInput.txt')
+    expect(Elves.calories_carried_by_top_elfs(calory_count)).to eq(209481)
+  end
 end

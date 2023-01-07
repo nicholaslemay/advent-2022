@@ -25,3 +25,12 @@ RSpec.describe "Calory counts" do
     expect(CaloryCounts.from_file('./Part2/day1Sample.txt')[0][0]).to eq(1000)
   end
 end
+
+RSpec.describe "Day01" do
+
+  it 'Can solve sample ' do
+    calory_count = CaloryCounts.from_file('./Part2/day1Sample.txt')
+    expect(Elves.calories_carried_by_top_elfs(calory_count)).to eq(45000)
+  end
+
+end

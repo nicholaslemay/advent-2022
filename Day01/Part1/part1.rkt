@@ -2,12 +2,12 @@
 (require "../../schemy-spec.rkt")
 
 (define (sum x) (apply + x))
-(define (most-calories calories) (apply max calories))
+(define (most-calories calories) (apply max (map sum calories))))
 
 (describe "Calculating most calories per elf"
 
     (it "returns highest calory received" (lambda (expect)
-      (expect (most-calories '(1 2 3 4 3 2 1)) (toEqual 4))
+      (expect (most-calories '((1 1 1) (3 3 3) (2 2 2)) (toEqual 9))
     ))
 
 

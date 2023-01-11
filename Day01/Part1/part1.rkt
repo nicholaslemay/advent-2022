@@ -4,9 +4,9 @@
 
 (define most-calories null)
 
-(describe "something"
+(describe "Calculating most calories per elf"
 
-    (it "does something" (lambda (expect)
+    (it "returns null" (lambda (expect)
       (expect most-calories (toEqual null))
     ))
 

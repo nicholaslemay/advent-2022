@@ -17,4 +17,11 @@
       (expect (top-calories '((10 10 10) (1 1 1) (9 9 9) (8 8 8) )) (toEqual (+ 30 27 24)))
     ))
 
+    (it "resolve sample input" (lambda (expect)
+      (expect (top-calories day1-sample) (toEqual 45000))
+    ))
+
+    (it "resolve my own input" (lambda (expect)
+      (expect (top-calories day1-input) (toEqual 209481))
+    ))
 )

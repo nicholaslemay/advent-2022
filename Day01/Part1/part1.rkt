@@ -6,7 +6,7 @@
 
 (describe "Calculating most calories per elf"
 
-    (it "returns calory received" (lambda (expect)
+    (it "returns highest calory received" (lambda (expect)
       (expect (most-calories '(1 2 3 4 3 2 1)) (toEqual 4))
     ))
 

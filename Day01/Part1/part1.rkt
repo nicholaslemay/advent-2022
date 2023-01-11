@@ -1,5 +1,6 @@
 #lang racket
 (require "../../schemy-spec.rkt")
+(require "../day1-sample.rkt")
 
 (define (sum x) (apply + x))
 (define (most-calories calories-per-elf) (apply max (map sum calories-per-elf)))
@@ -11,8 +12,8 @@
     ))
 
 
-    (it "can sum calories per elf" (lambda (expect)
-      (expect (sum '(1 2 3 4)) (toEqual 10))
+    (it "resolve sample input" (lambda (expect)
+      (expect (most-calories day1-sample) (toEqual 24000))
     ))
 
 )
